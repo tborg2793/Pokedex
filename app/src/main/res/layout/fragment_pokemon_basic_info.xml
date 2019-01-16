@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragments.PokemonBasicInfo"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/psychic">
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/pokemon_species_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="7dp"
+            android:background="@null"
+            android:orientation="vertical">
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:background="@color/psychic"
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:id="@+id/relative_layout"
+           >
+        <TextView
+                android:text="Mewtwo"
+                android:textSize="25sp"
+                android:layout_width="193dp"
+                android:layout_height="wrap_content" android:id="@+id/pokemon_details_name"/>
+        <ImageView
+                android:layout_width="153dp" android:adjustViewBounds="true" android:layout_alignParentRight="true"
+                android:layout_height="match_parent" app:srcCompat="@drawable/test"
+                android:id="@+id/pokemon_shape"/>
+        <ImageView
+                android:layout_width="153dp" android:adjustViewBounds="true" android:layout_alignParentRight="true"
+                android:layout_height="match_parent" app:srcCompat="@drawable/description_150"
+                android:id="@+id/pokemon_details_image"/>
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+                      android:id="@+id/linearLayout2" android:orientation="vertical"
+                      android:background="@color/psychic">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/basic_info_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:textSize="25sp" android:text="Species" android:gravity="center"
+                              android:padding="5dp"/>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:background="@drawable/rectangle_rounded"
+                              android:textSize="15sp" android:padding="10dp" android:gravity="center"
+                              android:text="Mewtwo is a pokemon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokemon'sbody, they failed to endow Mewtwo with a compassionate heart."
+                              android:id="@+id/pokemon_description_txtView"
+                              android:layout_marginRight="10dp"
+                              android:layout_marginLeft="10dp"/>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:textSize="10sp" android:paddingBottom="10dp" android:gravity="center"
+                              android:text="Pokédex entry" android:id="@+id/pokedex_entry_title"/>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1">
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:padding="10dp" android:gravity="center"
+                                  android:text="5'7'' (1.79 m)" android:id="@+id/pokemon_height_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginLeft="10dp"
+                                  android:layout_weight="0.5" android:layout_marginRight="5dp"/>
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:padding="10dp" android:gravity="center"
+                                  android:text="199.52 lbs (90.5 kg)" android:id="@+id/pokemon_weight_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginRight="10dp"
+                                  android:layout_weight="0.5" android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1" android:layout_marginBottom="10dp">
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="10sp" android:gravity="center"
+                                  android:text="Height" android:id="@+id/pokemon_height_title"
+                                  android:layout_marginLeft="10dp"
+                                  android:layout_weight="0.5" android:layout_marginRight="5dp"/>
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="10sp" android:gravity="center"
+                                  android:text="Weight" android:id="@+id/pokemon_weight_title"
+                                  android:layout_marginRight="10dp"
+                                  android:layout_weight="0.5" android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1">
+
+                        <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                   android:textSize="15sp" android:padding="10dp" android:gravity="center"
+                                   android:id="@+id/pokedex_speak_button"
+                                    android:layout_marginLeft="10dp"
+                                   android:layout_weight="0.5" android:layout_marginRight="5dp"
+                                   app:srcCompat="@drawable/ic_speak"/>
+
+                        <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                   android:textSize="15sp" android:padding="10dp" android:gravity="center"
+                                   android:id="@+id/pokemon_cry_button"
+                                   android:layout_marginRight="10dp"
+                                   android:layout_weight="0.5" android:layout_marginLeft="5dp"
+                                   app:srcCompat="@drawable/ic_musical_note"/>
+
+                    </LinearLayout>
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1" android:layout_marginBottom="10dp">
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="10sp" android:gravity="center"
+                                  android:text="Speak" android:id="@+id/pokedex_speak_title"
+                                  android:layout_marginLeft="10dp"
+                                  android:layout_weight="0.5" android:layout_marginRight="5dp"/>
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="10sp" android:gravity="center"
+                                  android:text="Cry" android:id="@+id/pokemon_cry_title"
+                                  android:layout_marginRight="10dp"
+                                  android:layout_weight="0.5" android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/ability_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:orientation="vertical">
+                    <TextView
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_margin="10dp" android:text="Abilities"
+                            android:textSize="25sp" android:gravity="center"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:layout_margin="10dp"
+                              android:background="@drawable/rectangle_rounded" android:text="Pressure"
+                              android:gravity="center"
+                              android:id="@+id/ability_slot1_txtView" android:textSize="15sp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:layout_marginHorizontal="10dp"
+                              android:layout_marginBottom="10dp" android:background="@drawable/rectangle_rounded"
+                              android:text="Unnerve" android:gravity="center"
+                              android:id="@+id/ability_slot2_txtView" android:textSize="15sp"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/base_stats_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:orientation="vertical">
+                    <TextView
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_margin="10dp" android:text="Base Stats"
+                            android:textSize="25sp" android:gravity="center"/>
+
+                    <com.github.mikephil.charting.charts.HorizontalBarChart
+                            android:id="@+id/skill_rating_chart"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                    />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:layout_marginBottom="10dp"
+                              android:text="TOTAL 405" android:gravity="center"
+                              android:id="@+id/total_base_stats_txtView" android:textSize="15sp"
+                              android:layout_marginEnd="10dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/evolution_chain_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:orientation="vertical">
+                    <TextView
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_margin="10dp" android:text="Evolution Chain"
+                            android:textSize="25sp" android:gravity="center"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+</FrameLayout>

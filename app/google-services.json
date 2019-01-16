@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "75466138812",
+    "firebase_url": "https://pokedex-master-417af.firebaseio.com",
+    "project_id": "pokedex-master-417af",
+    "storage_bucket": "pokedex-master-417af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75466138812:android:f367609506cf3996",
+        "android_client_info": {
+          "package_name": "com.example.thomas_laughingman.pokedex_master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75466138812-rcuesvsctoe84ffd3jt5l3c2fl0v1fcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thomas_laughingman.pokedex_master",
+            "certificate_hash": "8cd3f996c8769d0fb106715a706ddcf9134aea27"
+          }
+        },
+        {
+          "client_id": "75466138812-fgdt4njuh2sg86g7ad32sf6jstlvc8mo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvMPYZps67-N2dTWby0emxCchtK7XnmTA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75466138812-fgdt4njuh2sg86g7ad32sf6jstlvc8mo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

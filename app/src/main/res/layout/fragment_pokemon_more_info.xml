@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context=".fragments.PokemonMoreInfo">
+
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/psychic">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+                      android:id="@+id/linearLayout2" android:orientation="vertical"
+                      android:background="@color/psychic">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/master_trainer_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                              android:orientation="vertical">
+                <TextView
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_margin="10dp" android:id="@+id/master_trainer_name_txtView"
+                        android:text="Master Trainer"
+                        android:textSize="25sp" android:gravity="center"/>
+
+
+                    <RelativeLayout android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                        <TextView
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_margin="10dp" android:id="@+id/master_trainer_pokemon_name_txtView"
+                                android:text="Bulbasaur"
+                                android:textSize="15sp" />
+                        <TextView
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_margin="10dp" android:id="@+id/master_trainer_pokemon_level_txtView"
+                                android:text="Lv 65" android:gravity="right"
+                                android:textSize="15sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1">
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:gravity="center"
+                                  android:text="Grass" android:id="@+id/pokemon_height_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginLeft="10dp"
+                                  android:layout_weight="0.5" android:layout_marginRight="5dp" android:layout_marginBottom="10dp"/>
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:gravity="center"
+                                  android:text="Poison" android:id="@+id/pokemon_weight_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginRight="10dp"
+                                  android:layout_weight="0.5" android:layout_marginLeft="5dp" android:layout_marginBottom="10dp"/>
+
+
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:textSize="20sp" android:text="Moves" android:gravity="center"
+                              android:padding="5dp"/>
+
+                    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                 xmlns:tools="http://schemas.android.com/tools"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:padding="5dp"
+                                 android:stretchColumns="2"
+                                 tools:context=".PokemonDetails">
+
+                        <TableRow>
+                            <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:gravity="center"
+                                    android:text="Slot 1"
+                                    android:textSize="15sp"
+                                    android:background="@drawable/border"
+
+                            />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/move_slot1_txtView"
+                                    android:paddingLeft="10dp"
+                                    android:layout_column="2"
+                                    android:text="Outrage"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:gravity="center"
+                                    android:text="Slot 2"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/move_slot2_txtView"
+                                    android:paddingLeft="10dp"
+                                    android:layout_column="2"
+                                    android:text="Ice Beam"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:gravity="center"
+                                    android:text="Slot 3"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/move_slot3_txtView"
+                                    android:paddingLeft="10dp"
+                                    android:layout_column="2"
+                                    android:text="Aqua Jet"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:gravity="center"
+                                    android:text="Slot 4"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/move_slot4_txtView"
+                                    android:paddingLeft="10dp"
+                                    android:layout_column="2"
+                                    android:text="Reflect"
+                                    android:background="@drawable/border"
+                                    android:textSize="15sp" />
+                        </TableRow>
+
+                    </TableLayout>
+
+
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
+                    android:id="@+id/master_trainer_location_textView" android:textSize="15sp" android:text="Location"
+                    android:background="@drawable/rectangle_rounded" android:layout_marginHorizontal="10dp"
+                    />
+
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                               app:srcCompat="@drawable/mastertrainerloc_94" android:id="@+id/master_trainer_location_imageView"
+                               android:paddingHorizontal="10dp"
+                    />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
+</FrameLayout>
