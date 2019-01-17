@@ -46,7 +46,6 @@ class PokemonMoreInfo : Fragment() {
         pokemon_master_trainer = inflater.context.db.getMasterTrainer(pokemon_id)
         var pokemon_master_trainer_moves = inflater.context.db.getMasterTrainerPokemonMoves(pokemon_id)
 
-
         val view = inflater.inflate(R.layout.fragment_pokemon_more_info, container, false)
         var masterTrainerNameText = view.findViewById(R.id.master_trainer_name_txtView) as TextView
         var masterTrainerPokemonName = view.findViewById(R.id.master_trainer_pokemon_name_txtView) as TextView

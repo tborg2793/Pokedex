@@ -191,16 +191,33 @@
                             android:layout_width="match_parent" android:layout_height="wrap_content"
                             android:layout_margin="10dp" android:text="Abilities"
                             android:textSize="25sp" android:gravity="center"/>
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:layout_margin="10dp"
-                              android:background="@drawable/rectangle_rounded" android:text="Pressure"
-                              android:gravity="center"
-                              android:id="@+id/ability_slot1_txtView" android:textSize="15sp"/>
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:layout_marginHorizontal="10dp"
-                              android:layout_marginBottom="10dp" android:background="@drawable/rectangle_rounded"
-                              android:text="Unnerve" android:gravity="center"
-                              android:id="@+id/ability_slot2_txtView" android:textSize="15sp"/>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1" android:layout_marginBottom="10dp">
+
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:paddingVertical="5dp" android:gravity="center"
+                                  android:text="" android:id="@+id/pokemon_ability_slot1_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginLeft="10dp"
+                                  android:layout_weight="0.5" android:layout_marginRight="5dp"/>
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textSize="15sp" android:paddingVertical="5dp" android:gravity="center"
+                                  android:text="" android:id="@+id/pokemon_ability_slot2_txtView"
+                                  android:background="@drawable/rectangle_rounded" android:layout_marginRight="10dp"
+                                  android:layout_weight="0.5" android:layout_marginLeft="5dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:textSize="15sp" android:paddingVertical="5dp" android:gravity="center"
+                              android:text="" android:id="@+id/pokemon_ability_hidden_txtView"
+                              android:background="@drawable/rectangle_rounded" android:layout_marginRight="10dp"
+                              android:layout_weight="0.5" android:layout_marginLeft="5dp" android:layout_marginBottom="10dp"/>
+
+
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>

@@ -4,6 +4,7 @@ package com.example.thomas_laughingman.pokedex_master.fragments
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import android.widget.TextView
 import com.example.thomas_laughingman.pokedex_master.database.db
 
 import com.example.thomas_laughingman.pokedex_master.R
+import com.example.thomas_laughingman.pokedex_master.model.PokemonAbilities
 import com.example.thomas_laughingman.pokedex_master.model.Pokemon_Stats
 import com.example.thomas_laughingman.pokedex_master.views.XAxisValueFormatter
 import com.github.mikephil.charting.charts.HorizontalBarChart
@@ -24,7 +26,9 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
+import org.w3c.dom.Text
 import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +57,9 @@ class PokemonBasicInfo : Fragment() {
         val pokemon_name = args?.getString("pokemon_name")
 
         val pokemon_description: String = inflater.context.db.getPokemonDescription(pokemon_id!!)
+        val pokemon_abilities : ArrayList<PokemonAbilities> = inflater.context.db.getPokemonAbilities(pokemon_id!!)
+
+        Log.e("Ability", pokemon_abilities.count().toString())
 
         pokemon_stats = inflater.context.db.getPokemonStats(pokemon_id!!)
 
@@ -63,11 +70,27 @@ class PokemonBasicInfo : Fragment() {
         var pokemon_weight = view.findViewById(R.id.pokemon_weight_txtView) as TextView
         var pokemon_height = view.findViewById(R.id.pokemon_height_txtView) as TextView
 
+        var pokemon_ability_slot1 = view.findViewById(R.id.pokemon_ability_slot1_txtView) as TextView
+        var pokemon_ability_slot2 = view.findViewById(R.id.pokemon_ability_slot2_txtView) as TextView
+        var pokemon_ability_hidden_slot = view.findViewById(R.id.pokemon_ability_hidden_txtView) as TextView
+
+
         nameTxtView.setText(pokemon_name)
         pokemonImageView.setImageResource(resources.getIdentifier("description_"+pokemon_id.toString(),"drawable", "com.example.thomas_laughingman.pokedex_master"))
         speciesDetailsTxtView.setText(pokemon_description)
         pokemon_weight.setText(pokemon_stats?.weight)
         pokemon_height.setText(pokemon_stats?.height)
+
+        Log.e("Size Array", pokemon_abilities.count().toString())
+
+        pokemon_abilities.forEach {
+            if(it.slot == 1)
+                pokemon_ability_slot1.setText(it.ability)
+            else if(it.slot == 2)
+                pokemon_ability_slot2.setText(it.ability)
+            else if (it.slot == 3)
+                pokemon_ability_hidden_slot.setText("Hidden: "+it.ability)
+        }
 
         return view
     }

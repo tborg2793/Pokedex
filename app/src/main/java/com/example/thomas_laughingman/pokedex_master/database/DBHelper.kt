@@ -4,10 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
-import com.example.thomas_laughingman.pokedex_master.model.Pokemon
-import com.example.thomas_laughingman.pokedex_master.model.Pokemon_Master_Trainer
-import com.example.thomas_laughingman.pokedex_master.model.Pokemon_Master_Trainer_Moves
-import com.example.thomas_laughingman.pokedex_master.model.Pokemon_Stats
+import com.example.thomas_laughingman.pokedex_master.model.*
 import org.jetbrains.anko.db.*
 import java.io.File
 import java.io.FileOutputStream
@@ -158,25 +155,25 @@ class DBHelper(val context: Context) : ManagedSQLiteOpenHelper(context, DB_NAME,
         moves
     }
 
-    fun getPokemonAbilities(id: Long) : ArrayList<Pokemon_Master_Trainer_Moves> = context.db.use {
-        val moves = ArrayList<Pokemon_Master_Trainer_Moves>()
-
-        select(Pokemon_Master_Trainer_Moves.TABLE_NAME)
-            .whereSimple("${Pokemon_Master_Trainer_Moves.pokemon_id_column} = \"${id}\"")
-            .parseList(object: MapRowParser<List<Pokemon_Master_Trainer_Moves>> {
-                override fun parseRow(columns: Map<String, Any?>): List<Pokemon_Master_Trainer_Moves> {
-                    val id = columns.getValue("id")
-                    val pokemon_id = columns.getValue("pokemon_id")
-                    val move = columns.getValue("move")
-
-                    val pokeMove = Pokemon_Master_Trainer_Moves(id.toString().toLong(), pokemon_id.toString().toLong(), move.toString())
-                    moves.add(pokeMove)
-
-                    return moves
-                }
-            })
-        moves
+    fun getPokemonAbilities(id:Long): ArrayList<PokemonAbilities> {
+        val abilities = ArrayList<PokemonAbilities>()
+        val query = "SELECT pokemon_abilities.pokemon_id, abilities.identifier, " +
+                "pokemon_abilities.slot, pokemon_abilities.is_hidden "+
+                " FROM pokemon_abilities " +
+                " INNER JOIN abilities ON " +
+                " abilities.id=pokemon_abilities.ability_id " +
+                " WHERE pokemon_abilities.pokemon_id = " + id.toString()
+        context.db.use {
+            val cursor = context.db.readableDatabase.rawQuery(query, null)
+            while (cursor.moveToNext()) {
+                val ability = PokemonAbilities(id = cursor.getLong(0),ability = cursor.getString(1),
+                    slot = cursor.getInt(2), isHidden = cursor.getInt(3))
+                abilities.add(ability)
+            }
+        }
+        return abilities
     }
+
 
 
 
